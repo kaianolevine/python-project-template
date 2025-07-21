@@ -6,7 +6,7 @@ authors = ["Kaiano Levine <kaiano.levine@google.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "your_package" }
+    { include = "your_package", from = "src" }
 ]
 
 [tool.poetry.dependencies]
