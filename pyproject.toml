@@ -26,9 +26,6 @@ pytest = "^8.4.0"
 pytest-cov = "^6.2.1"
 pre-commit = "^4.2.0"
 
-[tool.poetry.scripts]
-westie-radio-sync = "your_package.westie_radio.sync:main"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
