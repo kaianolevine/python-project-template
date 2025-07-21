@@ -9,8 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      #SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-      #SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+      SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+      SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
       M3U_FOLDER_ID: 1FzuuO3xmL2n-8pZ_B-FyrvGWaLxLED3o
 
     steps:
@@ -31,7 +31,7 @@ jobs:
         run: poetry install --no-interaction
 
       - name: Run flake8
-        run: poetry run flake8 --max-line-length=88 --per-file-ignores=tests/*:F841 --extend-ignore=E203,E501 . tests/
+        run: poetry run flake8 --max-line-length=88 --per-file-ignores=tests/*:F841 --extend-ignore=E203,E501 your_package tests/
 
       - name: Run tests with coverage
-        run: poetry run pytest --cov=. tests/
+        run: poetry run pytest --cov=your_package tests/
