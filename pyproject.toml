@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "westie-dj-tools"
+version = "0.1.0"
+description = "Tools for organizing and syncing West Coast Swing DJ sets"
+authors = ["Kaiano Levine <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "your_package" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+gspread = "^6.0.2"
+google-auth = "^2.29.0"
+google-api-python-client = "^2.126.0"
+spotipy = "^2.23.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+mypy = "^1.10.0"
+black = "^25.1.0"
+flake8 = "^7.2.0"
+pytest = "^8.4.0"
+pytest-cov = "^6.2.1"
+pre-commit = "^4.2.0"
+
+[tool.poetry.scripts]
+westie-radio-sync = "your_package.westie_radio.sync:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
