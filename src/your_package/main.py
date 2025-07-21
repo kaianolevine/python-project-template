@@ -1,8 +1,5 @@
-from .core import greet
-
-
 def main():
-    print(greet("World"))
+    print("")
 
 
 if __name__ == "__main__":
