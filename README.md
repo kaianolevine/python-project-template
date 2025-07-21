@@ -1,7 +1,5 @@
 # Python Project Template
 
-[![Use this template](https://img.shields.io/badge/GitHub-Use_this_template-brightgreen?logo=github)](https://github.com/kaianolevine/python-project-template/generate)
-
 This is a reusable template for Python projects using Poetry, pytest, pre-commit, and GitHub Actions.
 
 ## 🔧 Features

@@ -1,5 +1,7 @@
-def greet(name: str) -> str:
-    return f"Hello, {name}!"
+from .core import greet
+
+def main():
+    print(greet("World"))
 
 if __name__ == "__main__":
-    print(greet("World"))
+    main()
