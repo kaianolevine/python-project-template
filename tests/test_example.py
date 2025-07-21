@@ -1,2 +1,4 @@
-def test_example():
-    assert 1 + 1 == 2
+from your_package.main import greet
+
+def test_greet():
+    assert greet("Tester") == "Hello, Tester!"
