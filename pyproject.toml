@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "westie-dj-tools"
+name = "python-project-template"
 version = "0.1.0"
 description = "Tools for organizing and syncing West Coast Swing DJ sets"
 authors = ["Kaiano Levine <you@example.com>"]
