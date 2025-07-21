@@ -6,7 +6,7 @@ authors = ["Kaiano Levine <you@example.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "your_package", from = "src" }
+    { include = "src" }
 ]
 
 [tool.poetry.dependencies]
@@ -23,9 +23,6 @@ flake8 = "^7.2.0"
 pytest = "^8.4.0"
 pytest-cov = "^6.2.1"
 pre-commit = "^4.2.0"
-
-[tool.poetry.scripts]
-westie-radio-sync = "your_package.westie_radio.sync:main"
 
 [build-system]
 requires = ["poetry-core"]
