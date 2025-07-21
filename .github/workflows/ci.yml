@@ -31,7 +31,7 @@ jobs:
         run: poetry install --no-interaction
 
       - name: Run flake8
-        run: poetry run flake8 --max-line-length=88 --per-file-ignores=tests/*:F841 --extend-ignore=E203,E501 your_package tests/
+        run: poetry run flake8 --max-line-length=88 --per-file-ignores=tests/*:F841 --extend-ignore=E203,E501 . tests/
 
       - name: Run tests with coverage
-        run: poetry run pytest --cov=your_package tests/
+        run: poetry run pytest --cov=. tests/
