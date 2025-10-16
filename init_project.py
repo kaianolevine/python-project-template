@@ -5,14 +5,15 @@ Rename the template package from `project_name` to a new name.
 Usage:
     python init_project.py my_new_project
 """
+import re
 import sys
 from pathlib import Path
-import re
 
 ROOT = Path(__file__).parent.resolve()
 SRC_DIR = ROOT / "src"
 TESTS_DIR = ROOT / "tests"
 OLD = "project_name"
+
 
 def replace_in_file(path: Path, old: str, new: str):
     if not path.exists() or not path.is_file():
@@ -24,6 +25,7 @@ def replace_in_file(path: Path, old: str, new: str):
     text_new = text.replace(old, new)
     if text_new != text:
         path.write_text(text_new, encoding="utf-8")
+
 
 def main():
     if len(sys.argv) != 2:
@@ -63,6 +65,7 @@ def main():
     print("  poetry install")
     print("  pre-commit install")
     print("  poetry run pytest")
+
 
 if __name__ == "__main__":
     main()
