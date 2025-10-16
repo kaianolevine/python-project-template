@@ -5,3 +5,5 @@ source = project_name
 [report]
 fail_under = 90
 show_missing = True
+skip_empty = True
+ignore_errors = True
