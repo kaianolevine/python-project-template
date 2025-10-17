@@ -16,25 +16,46 @@ It also depends on your shared library: **kaiano-common-utils** (tracking `main`
 - Poetry ≥ 1.8 (`pip install poetry`)
 - Git
 
-### 2) Clone & install
+### 2) Clone & Install
 ```bash
 git clone git@github.com:kaianolevine/python-project-template.git
 cd python-project-template
 poetry install
 ```
 
-### 3) Enable pre-commit
+## 3) 🪄 Initialize a New Project (Rename)
+Use the included script to rename the placeholder package (`project_name`) to your new name:
+```bash
+python init_project.py my_new_project
+```
+
+What it updates:
+- `src/project_name` → `src/my_new_project`
+- `tests/project_name` → `tests/my_new_project`
+- `pyproject.toml` `[tool.poetry].name` and package path
+- Basic import paths in tests
+
+### 4) (Re)Install - new env
+```bash
+poetry install
+```
+
+### 5) Enable pre-commit
 ```bash
 poetry run pre-commit install
-poetry run pre-commit run --all-files   # optional first sweep
 ```
 
-### 4) Run tests & coverage
+### 5a) Optional first sweep
 ```bash
-poetry run pytest --cov=project_name --cov-report=term-missing
+poetry run pre-commit run --all-files
 ```
 
-### 5) Formatting
+### 6) Run tests & coverage
+```bash
+poetry run pytest --cov=src --cov-report=term-missing
+```
+
+### 7) Formatting
 ```bash
 poetry run black . && poetry run isort . && poetry run flake8
 ```
@@ -69,24 +90,6 @@ If your repo doesn’t expose “Workflow permissions,” this template’s `ver
 
 ---
 
-## 🪄 Initialize a New Project (Rename)
-Use the included script to rename the placeholder package (`project_name`) to your new name:
-```bash
-python init_project.py my_new_project
-```
-
-What it updates:
-- `src/project_name` → `src/my_new_project`
-- `tests/project_name` → `tests/my_new_project`
-- `pyproject.toml` `[tool.poetry].name` and package path
-- Basic import paths in tests
-
-Then run:
-```bash
-poetry install
-pre-commit install
-poetry run pytest
-```
 
 ---
 
