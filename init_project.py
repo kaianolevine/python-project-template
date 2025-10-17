@@ -43,6 +43,17 @@ def main():
         txt = re.sub(r'(?m)^name\s*=\s*"(.*?)"', f'name = "{new}"', txt)
         txt = txt.replace(f'include = "{OLD}"', f'include = "{new}"')
         pyproj.write_text(txt, encoding="utf-8")
+        print("✅ Updated package name and include in pyproject.toml.")
+
+        # Reset version field to 0.0.1
+        txt = pyproj.read_text(encoding="utf-8")
+        if re.search(r'(?m)^version\s*=\s*".*"', txt):
+            txt = re.sub(r'(?m)^version\s*=\s*".*"', 'version = "0.0.1"', txt)
+        else:
+            # If no version field, add it after the name field
+            txt = re.sub(r'(?m)^(name\s*=\s*".*")', r'\1\nversion = "0.0.1"', txt)
+        pyproj.write_text(txt, encoding="utf-8")
+        print("✅ Reset version to 0.0.1 in pyproject.toml.")
 
     # Rename src/ and tests/ package directories
     src_old = SRC_DIR / OLD
@@ -65,6 +76,13 @@ def main():
     print("  poetry install")
     print("  pre-commit install")
     print("  poetry run pytest")
+
+    # Delete this script file
+    try:
+        Path(__file__).unlink()
+        print("✅ Deleted init_project.py script.")
+    except Exception as e:
+        print(f"⚠️ Could not delete init_project.py: {e}")
 
 
 if __name__ == "__main__":
