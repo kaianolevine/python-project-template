@@ -25,8 +25,8 @@ poetry install
 
 ### 3) Enable pre-commit
 ```bash
-pre-commit install
-pre-commit run --all-files   # optional first sweep
+poetry run pre-commit install
+poetry run pre-commit run --all-files   # optional first sweep
 ```
 
 ### 4) Run tests & coverage
@@ -34,9 +34,8 @@ pre-commit run --all-files   # optional first sweep
 poetry run pytest --cov=project_name --cov-report=term-missing
 ```
 
-### 5) Type check & formatting
+### 5) Formatting
 ```bash
-poetry run mypy src/
 poetry run black . && poetry run isort . && poetry run flake8
 ```
 
