@@ -45,15 +45,15 @@ def main():
         pyproj.write_text(txt, encoding="utf-8")
         print("✅ Updated package name and include in pyproject.toml.")
 
-        # Reset version field to 0.0.1
+        # Reset version field to 0.1.0
         txt = pyproj.read_text(encoding="utf-8")
         if re.search(r'(?m)^version\s*=\s*".*"', txt):
-            txt = re.sub(r'(?m)^version\s*=\s*".*"', 'version = "0.0.1"', txt)
+            txt = re.sub(r'(?m)^version\s*=\s*".*"', 'version = "0.1.0"', txt)
         else:
             # If no version field, add it after the name field
-            txt = re.sub(r'(?m)^(name\s*=\s*".*")', r'\1\nversion = "0.0.1"', txt)
+            txt = re.sub(r'(?m)^(name\s*=\s*".*")', r'\1\nversion = "0.1.0"', txt)
         pyproj.write_text(txt, encoding="utf-8")
-        print("✅ Reset version to 0.0.1 in pyproject.toml.")
+        print("✅ Reset version to 0.1.0 in pyproject.toml.")
 
     # Rename src/ and tests/ package directories
     src_old = SRC_DIR / OLD
